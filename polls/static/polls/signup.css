@@ -1,0 +1,89 @@
+h1 {
+    color:#d6e5ff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    background-color: #8d91cc;
+    padding: 30px;
+    text-align: center;
+
+    border-radius: 50px;
+    margin: 30px;
+}
+
+h2 {
+    background-color: #4d6875;
+    padding: 30px;
+    border-radius: 50px;
+    margin: 20px 30px;
+
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #7ba7bd;
+    font-size: 35px;
+}
+
+form {
+    font: 50px Arial, sans-serif;
+
+    padding: 15px;
+    margin: 30px 30px;
+    border-radius: 50px;
+    background-color: #7ba7bd;
+    color:rgb(50, 73, 122);
+}
+
+input[type=text] {
+    box-sizing: border-box;
+    width: 430px;
+
+    border:none;
+    border-bottom: 4px solid lightsteelblue;
+    font-size: 60%;
+
+    padding: 10px;
+    margin-left: 10px;
+}
+
+input[type=password] {
+    box-sizing: border-box;
+    width: 200px;
+
+    border:none;
+    border-bottom: 4px solid lightsteelblue;
+    font-size: 60%;
+
+    padding: 10px;
+    margin-left: 10px;
+}
+
+.sButton {
+    height: 80px;
+    width: 200px;
+    background-color: rgb(191, 248, 245);
+
+    padding: 3px;
+    margin-top: 16px;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    border-radius: 25px;
+
+    color:#7ba7bd;
+    font: 50px Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(180deg, rgba(31,41,46,1) 0%, rgba(28,43,123,1) 100%);
+}
+
+span {
+    color:#d6e5ff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    text-align: right;
+
+    padding: 10px;
+    background-color: rgb(119, 130, 163);
+    margin: 30px;
+    border-radius: 15px;
+}

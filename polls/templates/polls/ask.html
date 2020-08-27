@@ -1,0 +1,24 @@
+{% extends "./BASE.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/ask.css' %}">
+
+<h1>{{ "Voting Cloud" }}</h1>
+
+{% if request.session.user_ID %}
+    <h2>Create a poll: Enter a question, and fill the first two required choices. You can create up to 3 more additional choices. Leave them blank to skip them.</h2>
+    <form action="ask" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input class = "sButton" type="submit" value="Create">
+    </form>
+
+    <div>
+        <a href=".">Back to home page</a>
+    </div>  
+{% else %}
+    <h2>You must be logged in to create a poll.</h2>
+{% endif %}
+
+{% endblock %}

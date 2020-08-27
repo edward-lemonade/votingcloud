@@ -1,0 +1,82 @@
+h1 {
+    color:#d6e5ff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    background-color: #8d91cc;
+    padding: 30px;
+    text-align: center;
+
+    border-radius: 50px;
+    margin: 30px;
+}
+
+h2 {
+    background-color: #4d6875;
+    padding: 30px;
+    border-radius: 50px;
+    margin: 20px 30px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: #7ba7bd;
+    font-size: 35px;
+}
+
+form {
+    background-color: #4d6875;
+    color:rgb(50, 73, 122);
+    font: 35px Arial, sans-serif;
+
+    padding: 15px;
+    margin: 30px 30px;
+    border-radius: 50px;
+}
+
+.radio_choice {
+    background-color: #7ba7bd;
+    color:rgb(50, 73, 122);
+    font: 35px Arial, sans-serif;
+
+    padding: 15px;
+    margin-top: 16px;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    border-radius: 25px;
+
+}
+
+.rButton {
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+
+.sButton {
+    height: 100px;
+    width: 200px;
+    background-color: rgb(191, 248, 245);
+
+    padding: 15px;
+    margin-top: 16px;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    border-radius: 25px;
+
+    color:#7ba7bd;
+    font: 50px Arial, sans-serif;
+}
+
+body {
+    background-color: #1f292e;
+}
+
+div {
+    background-color: #7ba7bd;
+    color:rgb(50, 73, 122);
+    font: 35px Arial, sans-serif;
+
+    padding: 20px;
+    margin: 20px 30px;
+    border-radius: 50px;
+}   

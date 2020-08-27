@@ -1,0 +1,106 @@
+{% extends "./BASE.html" %}
+{% load static %}
+
+{% block content %}
+<h1>{{ "Voting Cloud" }}</h1>
+<link rel="stylesheet" type="text/css" href="{% static 'polls/results.css' %}">
+
+{% if request.session.user_ID %}
+    <h2>{{ question.question_text }} {{ "Results:" }}</h2>
+
+    <ul>
+        {% for choice in question.choice_set.all %}
+        <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+        {% endfor %}
+    </ul>
+
+    <p>
+        <span>
+            <div id="container" style="width: 75%;">
+                <canvas id="pie-chart"></canvas>
+            </div>
+        </span>
+        <span>
+            <div id="container2" style="width: 75%;">
+                <canvas id="bar-chart"></canvas>
+            </div>
+        </span>
+    </p>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script>
+    
+        var pieChart = {
+            type: 'doughnut',
+            data: {
+                datasets: [{
+                    data: {{ data|safe }},
+                    backgroundColor: [
+                        '#37CE88', '#6185C3', '#CA98E9', '#A42C5B', '#F4C76F'
+                    ],
+                    label: 'Votes'
+                }],
+                labels: {{ labels|safe }}
+            },
+            options: {
+                responsive: true,
+                legend: {
+                    labels: {
+                        boxWidth: 100,
+                        fontColor: 'white',
+                    },
+                },
+            }
+        };
+        
+        var barChart = {
+            type: 'bar',
+            data: {
+                datasets: [{
+                    data: {{ data|safe }},
+                    backgroundColor: [
+                        '#37CE88', '#6185C3', '#CA98E9', '#A42C5B', '#F4C76F'
+                    ],
+                    label: 'Votes',
+                    borderColor: 'white',
+                    borderWidth: 2,
+                }],
+                labels: {{ labels|safe }}
+            },
+            options: {
+                responsive: true,
+                legend: {
+                    labels: {
+                        boxWidth: 100,
+                        fontColor: 'white',
+                    },
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        };
+
+        window.onload = function() {
+            var ctx = document.getElementById('pie-chart').getContext('2d');
+            window.myPie = new Chart(ctx, pieChart);
+
+            var ctx2 = document.getElementById('bar-chart').getContext('2d');
+            window.myBar = new Chart(ctx2, barChart);
+        };
+        
+    
+    </script>
+
+    <div>
+        <a href="../..">Back to home page</a>
+    </div>
+{% else %}
+    <h2>You must be logged in to vote and see polls.</h2>
+{% endif %}
+
+{% endblock %}

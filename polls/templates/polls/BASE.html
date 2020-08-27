@@ -1,0 +1,25 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/BASE.css' %}">
+
+<p class = "header">
+    {% if request.session.user_ID %}
+        <span class = "blue">
+            <a href="/polls/logout"> Log out </a>
+        </span>
+        <span class = "green">
+            <a href="/polls/ask"> Create a poll </a>
+        </span>
+        <span id= "name">
+            You are logged in as: {{ request.session.username }}
+        </span>
+    {% else %}
+        <span class = "blue">
+            <a href="/polls/signup"> Sign up </a>
+        </span>
+        <span class = "blue">
+            <a href="/polls/login"> Log in </a>
+        </span>
+    {% endif %}
+</p>
+
+{% block content %}{% endblock %}

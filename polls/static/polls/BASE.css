@@ -1,0 +1,35 @@
+.green {
+    color:#d6e5ff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    text-align: right;
+
+    padding: 10px;
+    background-color: rgb(119, 163, 153);
+    margin: 30px;
+    border-radius: 15px;
+}
+
+
+.blue {
+    color:#d6e5ff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    text-align: right;
+
+    padding: 10px;
+    background-color: rgb(119, 130, 163);
+    margin: 30px;
+    border-radius: 15px;
+}
+
+#name {
+    color:#d6e5ff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    text-align: right;
+}
+
+body {
+    background: linear-gradient(180deg, rgba(31,41,46,1) 0%, rgba(28,43,123,1) 100%);
+}

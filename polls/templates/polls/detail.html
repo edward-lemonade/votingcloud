@@ -1,0 +1,32 @@
+{% extends "./BASE.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/detail.css' %}">
+<h1>{{ "Voting Cloud" }}</h1>
+
+{% if request.session.user_ID %}
+    <h2>{{ question.question_text }}</h2>
+
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+
+    <form action="{% url 'polls:vote' question.id %}" method="post">
+    {% csrf_token %}
+    {% for choice in question.choice_set.all %}
+        <div class = "radio_choice">
+            <input type = "radio"  class = "rButton" name = "choice" id = "choice{{ forloop.counter }}" value="{{ choice.id }}">
+            <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
+        </div>
+    {% endfor %}
+    <input class = "sButton" type="submit" value="Vote">
+    </form>
+
+    <div>
+        <a href="..">Back to home page</a>
+    </div> 
+{% else %}
+    <h2>You must be logged in to vote and see polls.</h2>
+{% endif %}
+
+{% endblock %}

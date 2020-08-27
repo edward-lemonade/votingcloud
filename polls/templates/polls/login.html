@@ -1,0 +1,16 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/signup.css' %}">
+
+<h1>{{ "Voting Cloud" }}</h1>
+
+<h2>Login</h2>
+
+<form action="login" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input class = "sbutton" type="submit" value="Log in">
+</form>
+
+<span>
+    <a href="signup">or create a new account</a>
+</span>

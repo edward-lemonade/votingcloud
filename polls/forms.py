@@ -55,10 +55,10 @@ class AskForm(forms.Form):
     choice11 = forms.CharField(label = 'Choice 11', max_length=200, required=False)
     choice12 = forms.CharField(label = 'Choice 12', max_length=200, required=False)
 
-    sessionID = 0
+    userID = 0
 
     def setID(self, ID):
-        self.sessionID = ID
+        self.userID = ID
 
     def clean(self):
         super(AskForm, self).clean()
@@ -69,7 +69,7 @@ class AskForm(forms.Form):
         newQuestion = Question(
             question_text = self.cleaned_data['text'], 
             pDate = datetime.now(),
-            creator = self.sessionID
+            creator = User.objects.get(id = self.userID)
         )
         newQuestion.save()
 

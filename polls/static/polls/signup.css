@@ -6,14 +6,14 @@ h1 {
     padding: 30px;
     text-align: center;
 
-    border-radius: 50px;
+    border-radius: 15px;
     margin: 30px;
 }
 
 h2 {
     background-color: #4d6875;
     padding: 30px;
-    border-radius: 50px;
+    border-radius: 15px;
     margin: 20px 30px;
 
     text-align: center;
@@ -27,7 +27,7 @@ form {
 
     padding: 15px;
     margin: 30px 30px;
-    border-radius: 50px;
+    border-radius: 15px;
     background-color: #7ba7bd;
     color:rgb(50, 73, 122);
 }
@@ -66,10 +66,10 @@ input[type=password] {
     margin-left: 16px;
     margin-right: 16px;
     margin-bottom: 16px;
-    border-radius: 25px;
+    border-radius: 15px;
 
     color:#7ba7bd;
-    font: 50px Arial, sans-serif;
+    font: 30px Arial, sans-serif;
 }
 
 body {
@@ -85,5 +85,10 @@ span {
     padding: 10px;
     background-color: rgb(119, 130, 163);
     margin: 30px;
-    border-radius: 15px;
+    border-radius: 10px;
+}
+
+
+a {
+    text-decoration: none;
 }

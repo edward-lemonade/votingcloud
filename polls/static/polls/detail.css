@@ -6,14 +6,14 @@ h1 {
     padding: 30px;
     text-align: center;
 
-    border-radius: 50px;
+    border-radius: 15px;
     margin: 30px;
 }
 
 h2 {
     background-color: #4d6875;
     padding: 30px;
-    border-radius: 50px;
+    border-radius: 15px;
     margin: 20px 30px;
 
     font-family: Arial, Helvetica, sans-serif;
@@ -28,7 +28,7 @@ form {
 
     padding: 15px;
     margin: 30px 30px;
-    border-radius: 50px;
+    border-radius: 15px;
 }
 
 .radio_choice {
@@ -41,7 +41,7 @@ form {
     margin-left: 16px;
     margin-right: 16px;
     margin-bottom: 16px;
-    border-radius: 25px;
+    border-radius: 10px;
 
 }
 
@@ -61,7 +61,7 @@ form {
     margin-left: 16px;
     margin-right: 16px;
     margin-bottom: 16px;
-    border-radius: 25px;
+    border-radius: 10px;
 
     color:#7ba7bd;
     font: 50px Arial, sans-serif;
@@ -78,5 +78,9 @@ div {
 
     padding: 20px;
     margin: 20px 30px;
-    border-radius: 50px;
+    border-radius: 15px;
 }   
+
+a {
+    text-decoration: none;
+}

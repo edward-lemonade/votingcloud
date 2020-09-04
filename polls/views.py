@@ -17,7 +17,7 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         """Return the last five published questions."""
         pDate__lte = timezone.now()
-        return Question.objects.filter().order_by('-pDate')[:20]
+        return Question.objects.filter().order_by('-pDate')[:100]
 
 class DetailView(generic.DetailView):
     model = Question
@@ -41,6 +41,10 @@ class AskView(generic.FormView):
     form_class = AskForm
     success_url = '.'
 
+    def get_form(self, form_class=None):
+        askform = super(AskView, self).get_form(form_class)
+        askform.setID(self.request.session['user_ID'])
+        return askform
     #def form_valid(self, form):
      #   form.save_poll()
       #  return super().form_valid(form)

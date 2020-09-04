@@ -7,7 +7,7 @@
     padding: 10px;
     background-color: rgb(119, 163, 153);
     margin: 30px;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 
@@ -20,8 +20,9 @@
     padding: 10px;
     background-color: rgb(119, 130, 163);
     margin: 30px;
-    border-radius: 15px;
+    border-radius: 10px;
 }
+
 
 #name {
     color:#d6e5ff;

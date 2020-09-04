@@ -4,14 +4,14 @@
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'polls/ask.css' %}">
 
-<h1>{{ "Voting Cloud" }}</h1>
 
 {% if request.session.user_ID %}
-    <h2>Create a poll: Enter a question, and fill the first two required choices. You can create up to 3 more additional choices. Leave them blank to skip them.</h2>
+    <h2>Create a poll: Enter a question, and fill the first two choices (required). You can create up to 10 more additional choices. Leave them blank to skip them.</h2>
     <form action="ask" method="post">
         {% csrf_token %}
         {{ form }}
-        <input class = "sButton" type="submit" value="Create">
+        <p>Please wait for your question to be validated. This process may take up to 5 days.</p>
+        <input class = "sButton" type="submit" value="Submit">
     </form>
 
     <div>

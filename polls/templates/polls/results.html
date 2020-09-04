@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-<h1>{{ "Voting Cloud" }}</h1>
+
 <link rel="stylesheet" type="text/css" href="{% static 'polls/results.css' %}">
 
 {% if request.session.user_ID %}
@@ -36,7 +36,7 @@
                 datasets: [{
                     data: {{ data|safe }},
                     backgroundColor: [
-                        '#37CE88', '#6185C3', '#CA98E9', '#A42C5B', '#F4C76F'
+                        '#EF5F5F', '#EFA25F', '#EFD55F', '#B2EF5F', '#5FEF99', '#5FEFE3', '#5FCDEF', '#5F85EF', '#965FEF', '#CD5FEF', '#EF5FC5', '#F9B0ED'
                     ],
                     label: 'Votes'
                 }],
@@ -59,7 +59,7 @@
                 datasets: [{
                     data: {{ data|safe }},
                     backgroundColor: [
-                        '#37CE88', '#6185C3', '#CA98E9', '#A42C5B', '#F4C76F'
+                    '#EF5F5F', '#EFA25F', '#EFD55F', '#B2EF5F', '#5FEF99', '#5FEFE3', '#5FCDEF', '#5F85EF', '#965FEF', '#CD5FEF', '#EF5FC5', '#F9B0ED'
                     ],
                     label: 'Votes',
                     borderColor: 'white',
@@ -78,7 +78,8 @@
                 scales: {
                     yAxes: [{
                         ticks: {
-                            beginAtZero: true
+                            beginAtZero: true,
+                            stepSize: 1,
                         }
                     }]
                 }

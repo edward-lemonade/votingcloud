@@ -10,10 +10,12 @@ class ChoiceInLine(admin.TabularInline):
 class QuestionAdmin(admin.ModelAdmin):
     fieldsets = [
         (None,               {'fields': ['question_text']}),
+        (None,               {'fields': ['authorized']}),
         ('Date information', {'fields': ['pDate'], 'classes': ['collapse']}),
+        (None,               {'fields': ['creator']}),
     ]
     inlines = [ChoiceInLine]
-    list_display = ('question_text', 'pDate', 'was_published_recently')
+    list_display = ('question_text', 'authorized', 'pDate', 'was_published_recently')
     list_filter = ['pDate']
     search_fields = ['question_text']
 

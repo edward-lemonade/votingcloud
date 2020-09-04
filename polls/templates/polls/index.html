@@ -3,12 +3,21 @@
 
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'polls/index.css' %}">
-<h1>{{ "Voting Cloud" }}</h1>
+
+<p class='text'>
+    Welcome to Data Ocean. This is a web app designed for government officials, doctors, scientists, and researchers to easily collect data through basic surveys. You can create a poll, and after it has been validated, it will become available to the public for other users to vote on. Surveys are limited to only important topics, such as Covid-19. 
+</p>
 
 {% if latest_question_list %}
     <ul>
     {% for question in latest_question_list %}
-        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+        {% if question.authorized %}
+            {% if question.creator.id == request.session.user_ID%}
+                <li class = 'creator'><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }} (Your poll)</a></li>
+            {% else %}
+                <li class = 'other'><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+            {% endif %}
+        {% endif %}
     {% endfor %}
     </ul>
 {% else %}

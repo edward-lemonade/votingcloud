@@ -3,7 +3,6 @@
 
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'polls/detail.css' %}">
-<h1>{{ "Voting Cloud" }}</h1>
 
 {% if request.session.user_ID %}
     <h2>{{ question.question_text }}</h2>
@@ -22,6 +21,12 @@
     <input class = "sButton" type="submit" value="Vote">
     </form>
 
+    
+    {% if question.creator.id == request.session.user_ID%}
+        <div>
+            <a href="results">This is your own poll, click here for the results</a>
+        </div>
+    {% endif %}
     <div>
         <a href="..">Back to home page</a>
     </div> 
